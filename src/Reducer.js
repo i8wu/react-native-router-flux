@@ -231,7 +231,7 @@ function inject(state, action, props, scenes) {
         props,
         scenes,
         state.index,
-        action,
+        { ...action, parentIndex: state.children[ind].parentIndex },
       );
 
       return { ...state, index: ind };
